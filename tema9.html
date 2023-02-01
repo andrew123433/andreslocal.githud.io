@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOCAL XTREME</title>
+	<meta charset="utf-8">
+	<link rel="icon"href="X.PNG">
+	<link rel="stylesheet" type="text/css" href="estilotienda.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<script src="jquery-3.6.0.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&display=swap" rel="stylesheet">
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/c24f8e7e29.js" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</head>
+<body class="body_pagina9">
+	<header class="header2">
+		<a href="index.html">
+	        	</a>
+	    	    <nav class="nav_li"><a href="index.html" class="menu">INICIO</a></nav>
+			        <li class="nav_li container_submenu">
+                        <a class="menu submenu_btn">SERIES<i class="fas fa-chevron-down" class="down"></i></a>
+                            <ul class="submenu">
+                        	    <ul class="categorias">
+                    	            <li class="categoria_7"><a href=""></a><i class="fas fa-chevron-down" class="down"></i></li>
+                                    <li class="categoria_1"><a href="#">FIGURAS DE ANIME</a></li>
+                    		        <li class="categoria_2"><a href="#">SMARTPHONES</a></li>
+                    		        <li class="categoria_3"><a href="#">ACCESORIOS GAMERS</a></li>
+                                </ul>
+                    	    <li class="categoria_4"><a href="#">SMARTPHONES</a></li>
+                    	    <li class="categoria_5"><a href="#">PC</a></li>
+                    	    <li class="categoria_6"><a href="#">AVANCES</a></li>
+                        </ul>
+                    </li>
+			        <li class="nav_li"><a href="tema5.html" target="_blank" class="menu">SOBRE NOSOTROS</a></li>
+			        <li class="nav_li"><a href="tema7.html" class="menu">CONTACTO</a></li>
+					<a href="http://localhost/validar/validar.php"><button class="ingresa">INGRESAR</button></a>
+				
+		<div class="header2_container">
+		<div class="search_place">
+			<input type="text" name="buscador" id="busqueda" placeholder="Buscar" class="form-control">
+			<button class="boton_main" id="boton"><i class="fa fa-search" aria-hidden="true"></i></button>	
+		</div>
+		</div>
+	</header>
+	<div class="scroll">
+	<main class="main2">
+	<div class="container_img">
+		<h4 class="tulogo2">LOCAL XTREME</h4>
+		<script>
+			const producto = [
+				{nombre: 'dragon' Image.src="imgproductos/dragonball.png"},
+		]
+			
+			const productos = document.querySelector('#busqueda');
+			const boton = document.querySelector('#boton');
+			const resultado = document.querySelector('.productos');
+
+			const filtrar = ()=>{
+				//console.log(busqueda.value);
+				productos.innerHTML = '';
+
+				const texto = busqueda.value.toLowerCase();
+				for(let productoss of producto){
+					let nombre = productoss.nombre.toLowerCase();
+					if(nombre.indexOf(texto) !== -1){
+						productos.innerHTML += `
+						<li>${producto.nombre}</li>
+						` 
+					}
+				}
+				if(productos.innerHTML === ''){
+					productos.innerHTML += `
+					<li>Resultado no Encontrado</li>
+					`
+				}
+			}
+
+			boton.addEventListener('click', filtrar)
+		</script>
+		<ul class="productos">
+			<li class="pelicula">dragon ball<a href="tema45.html"><img class="figura" id="img_figura" src="imgproductos/dragonball.png" title="Mi Falso Prometido"></a></li>
+			<li class="pelicula">minions<a href="tema47.html"><img class="figura" id="img_figura" src="imgproductos/minions.png"></a></li>
+			<li class="pelicula">la maldicion<a href="tema13.html"><img class="figura" id="img_figura" src="imgproductos/lamaldicion.png"></a></li>
+			<li class="pelicula">bunnyman<a href="tema14.html"><img class="figura" id="img_figura" src="imgproductos/bunnyman.png"></a></li>
+			<li class="pelicula">StepUp<a href="tema15.html"><img class="figura" id="img_figura" src="imgproductos/StepUp.png"></a></li>
+		</ul>
+		<ul class="productos">
+			<li class="pelicula">agua y fuego<a href="tema18.html"><img class="figura" id="img_figura" src="imgproductos/aguayfuego.png"></a></li>
+			<li class="pelicula">el fantasma<a href="tema16.html"><img class="figura" id="img_figura" src="imgproductos/elfantasma.png"></a></li>
+			<li class="pelicula">placa de acero<a href="tema17.html"><img class="figura" id="img_figura" src="imgproductos/placadeacero.png"></a></li>
+			<li class="pelicula">hallie<a href="tema19.html"><img class="figura" id="img_figura" src="imgproductos/hallie.png"></a></li>
+			<li class="pelicula">seis balas<a href="tema20.html"><img class="figura" id="img_figura" src="imgproductos/seisbalas.png"></a></li>
+		</ul>
+		<ul class="productos">
+			<li class="pelicula">siete<a href="tema21.html"><img class="figura" id="img_figura" src="imgproductos/siete.png"></a></li>
+			<li class="pelicula">asesino<a href="tema22.html"><img class="figura" id="img_figura" src="imgproductos/asesino.png"></a></li>
+			<li class="pelicula">cenicienta<a href="tema23.html"><img class="figura" id="img_figura" src="imgproductos/cenicienta.png"></a></li>
+			<li class="pelicula">mac y davin<a href="tema24.html"><img class="figura" id="img_figura" src="imgproductos/macydavin.jpg"></a></li>
+			<li class="pelicula">indisius<a href="tema25.html"><img class="figura" id="img_figura" src="imgproductos/indisius.png"></a></li>
+		</ul>
+		
+	<footer>
+		<div class="paginacion">
+		    <li><a href="tema9.html">1</a></li>
+		    <li><a href="tema41.html">2</a></li>
+		    <li><a href="tema55.html">3</a></li>
+		    <li><a href="tema56.html">4</a></li>
+		    <li><a href="">5</a></li>
+		    <li><a href="">6</a></li>
+		    <li><a href="">7</a></li>
+		    <li><a href="">8</a></li>
+	    </div>
+	</footer>
+</body>
+</html>

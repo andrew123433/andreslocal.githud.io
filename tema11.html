@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CARRITO DE COMPRAS</title>
+	<meta charset="utf-8">
+	<link rel="icon"href="X.PNG">
+	<link rel="stylesheet" type="text/css" href="estilotienda.css">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<script src="jquery-3.6.0.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&display=swap" rel="stylesheet">
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/c24f8e7e29.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="body_carrito">
+	<div class="tex">
+		<h1 class="parrafo_carrito">CARRITO DE COMPRAS</h1>
+	</div>
+	<div class="container_elementos">
+		<div class="row">
+			<table class="table">
+                 <thead>
+                   <tr>
+                     <th scope="col">Producto</th>
+                     <th scope="col">Precio</th>
+                     <th scope="col">Cantidad</th>
+                     <th scope="col">Subtotal</th>
+                   </tr>
+                 </thead>
+                 <tbody class="table-group-divider">
+                   <tr>
+                     <td class="pt_5"><img class="figura" id="img_fi" src="imgproductoscopia/fi1.png" class="card_img_top" alt="..." height="50" width="50"></td>
+                     <td class="pt_5">40.000</td>
+                     <td class="pt_5"><input type="text" name="cant" value="1" class="from_control"></td>
+                     <td class="pt_5">0.00
+                     <td class="pt_5"><button id="btn-delete" class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></td>
+                   </tr>
+                   <tr>
+                     <td class="pt_5"><img class="figura" id="img_fi" src="imgproductoscopia/fi2.png" class="card_img_top" alt="..." height="50" width="50"></td>
+                     <td class="pt_5">40.000</td>
+                     <td class="pt_5"><input type="text" name="cant" value="1" class="from_control"></td>
+                     <td class="pt_5">0.00
+                     <td class="pt_5"><button id="btn-delete" class="btn btn-danger"><ion-icon name="trash-outline"></ion-icon></button></td>
+                   </tr>
+                 </tbody>
+               </table>
+		</div>
+		<a href="" class="btn btn-primary">Seguir Comprando</a>
+		<h4 class="text_right">Total <span id="Total" class="text-dark">$300.00</span></h4>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+	$(function(){
+		$(document).on("click","#btn-delete",function(){
+			$(this).parent().parent().remove();
+
+			getTotal();
+		});
+
+		$(document).on("keyup","input[name*=cant]",function(){
+
+			var Subtutal=$(this).val()*$(this).closest("tr").find("td:eq(1)").html();
+			$(this).closest("tr").find("td:eq(3)").html(Subtutal.toFixed(2));
+
+			getTotal();
+		});
+	});
+
+	function getTotal(){
+		Total=0;
+		$("tbody tr").each(function(){
+			total=total+Number($(this).find("td:eq(3)").html());
+		});
+
+		$("#total").html("$"+total.toFixed(2));
+	}
+</script>
+</body>
+</html>
